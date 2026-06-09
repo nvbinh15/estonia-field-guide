@@ -13,7 +13,12 @@ research, standalone repo, deploy to a nvbinh.com subdomain after review.
       links ✓ (483 total, 0 placeholders, 0 insecure), verification-artifact leaks stripped
       (sanitizer lives in merge.mjs), AI-tells de-duped ("is the rare" ×3 + "clean case study" rewritten),
       mobile horizontal-scroll fixed, 0 console errors, all 7 sections + interactions verified in-browser.
-- [ ] Deploy (git-connected Vercel + project domain) — AWAITING user go-ahead. Proposed: estonia.nvbinh.com.
+- [x] Adversarial reviewer pass (editorial + design): fixed AA contrast (--faint/--warn/--grey darkened),
+      added focus-visible + keyboard operability + aria-expanded, fixed literal-\n render bug + restored
+      paragraphs, reconciled Bolt currency + Skype authorship, stripped source-note leaks, de-AI'd openers.
+- [x] DEPLOYED. Repo: github.com/nvbinh15/estonia-field-guide (public, git-connected to Vercel for
+      auto-deploy on push). Live: https://estonia.nvbinh.com (HTTP 200, prod-verified, 0 console errors).
+      Domain is a Vercel PROJECT domain so it auto-follows future production deploys.
 
 ## Forces batch — resilience note
 The original 7-force workflow wedged on 2 hung tail agents (queue-tail starvation) and never
