@@ -1,0 +1,1717 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Estonian Anomaly — how 1.3 million people built a tech nation</title>
+    <meta
+      name="description"
+      content="A sourced field guide to how Estonia, a country of ~1.3 million, built the most startup-dense, most digital, fastest-AI-adopting nation in Europe — and where the story is hyped."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23fff'/%3E%3Crect x='4' y='6' width='24' height='6.4' rx='2' fill='%234891d9'/%3E%3Crect x='4' y='12.8' width='24' height='6.4' fill='%230c1117'/%3E%3Crect x='4' y='19.6' width='24' height='6.4' rx='2' fill='%23e9edf0'/%3E%3C/svg%3E"
+    />
+    <style>
+      :root {
+        --bg: #f4f7f8;
+        --panel: #ffffff;
+        --ink: #0c1117;
+        --muted: #5a646e;
+        --faint: #66707a;
+        --rule: #e3e8eb;
+        --rule-soft: #eef2f4;
+        --accent: #0a9fb4;
+        --accent-deep: #07778a;
+        --accent-soft: #e4f4f6;
+        --blue: #2f6fe0;
+        --warn: #946410;
+        --grey: #7e8893;
+        --maxw: 1120px;
+        --read: 64ch;
+        --nav-h: 56px;
+        --shadow: 0 1px 2px rgba(12, 17, 23, 0.04), 0 6px 24px rgba(12, 17, 23, 0.06);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent-deep);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+        }
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Inter", system-ui, sans-serif;
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Space Grotesk", "Inter", sans-serif;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.015em;
+        text-wrap: balance;
+        margin: 0;
+      }
+      p {
+        text-wrap: pretty;
+      }
+      a {
+        color: inherit;
+      }
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+      }
+      .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.13em;
+        text-transform: lowercase;
+        color: var(--faint);
+        font-weight: 500;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      .read {
+        max-width: var(--read);
+      }
+
+      /* ---------- reading progress + nav ---------- */
+      #progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: var(--accent);
+        z-index: 60;
+        transition: width 0.08s linear;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        height: var(--nav-h);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        background: rgba(244, 247, 248, 0.86);
+        backdrop-filter: saturate(1.4) blur(10px);
+        border-bottom: 1px solid var(--rule);
+        padding: 0 22px;
+      }
+      .brand {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        font-size: 15px;
+        white-space: nowrap;
+      }
+      .brand b {
+        color: var(--accent-deep);
+      }
+      .navlinks {
+        display: flex;
+        gap: 2px;
+        margin-left: 6px;
+        overflow: hidden;
+      }
+      .navlinks a {
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 13px;
+        padding: 6px 9px;
+        border-radius: 7px;
+        white-space: nowrap;
+        transition: background 0.15s, color 0.15s;
+      }
+      .navlinks a:hover {
+        background: var(--rule-soft);
+        color: var(--ink);
+      }
+      .navlinks a.on {
+        color: var(--accent-deep);
+        background: var(--accent-soft);
+      }
+      .navright {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        white-space: nowrap;
+      }
+      #now {
+        font-size: 12px;
+        color: var(--faint);
+        font-family: "JetBrains Mono", monospace;
+      }
+      #now b {
+        color: var(--ink);
+        font-weight: 500;
+      }
+      .idxbtn {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        border: 1px solid var(--rule);
+        background: var(--panel);
+        color: var(--muted);
+        border-radius: 8px;
+        padding: 6px 11px;
+        cursor: pointer;
+        transition: border-color 0.15s, color 0.15s;
+      }
+      .idxbtn:hover {
+        border-color: var(--accent);
+        color: var(--accent-deep);
+      }
+      .navtoggle {
+        display: none;
+      }
+
+      /* ---------- right-edge rail ---------- */
+      #rail {
+        position: fixed;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 40;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+      }
+      #rail .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1.5px solid var(--grey);
+        background: transparent;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.2s;
+      }
+      #rail .dot.done {
+        background: var(--grey);
+      }
+      #rail .dot.on {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 4px var(--accent-soft);
+        background: var(--accent);
+        transform: scale(1.15);
+      }
+      #rail .dot:hover::after {
+        content: attr(data-label);
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--ink);
+        color: #fff;
+        font-size: 11px;
+        font-family: "JetBrains Mono", monospace;
+        padding: 4px 8px;
+        border-radius: 6px;
+        white-space: nowrap;
+      }
+
+      /* ---------- index panel ---------- */
+      #scrim {
+        position: fixed;
+        inset: 0;
+        background: rgba(12, 17, 23, 0.32);
+        z-index: 70;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+      }
+      #scrim.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #indexPanel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: min(380px, 86vw);
+        background: var(--panel);
+        z-index: 80;
+        transform: translateX(100%);
+        transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        box-shadow: var(--shadow);
+        padding: 26px 26px 60px;
+      }
+      #indexPanel.open {
+        transform: translateX(0);
+      }
+      #indexPanel h4 {
+        font-size: 12px;
+        font-family: "JetBrains Mono", monospace;
+        text-transform: lowercase;
+        letter-spacing: 0.1em;
+        color: var(--faint);
+        font-weight: 500;
+        margin: 22px 0 8px;
+      }
+      #indexPanel a {
+        display: flex;
+        gap: 9px;
+        align-items: baseline;
+        text-decoration: none;
+        color: var(--ink);
+        padding: 6px 8px;
+        border-radius: 7px;
+        font-size: 14px;
+      }
+      #indexPanel a:hover {
+        background: var(--rule-soft);
+      }
+      #indexPanel a .n {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--faint);
+        min-width: 20px;
+      }
+      #indexPanel a.sub {
+        font-size: 13px;
+        color: var(--muted);
+        padding-left: 28px;
+      }
+      .closebtn {
+        position: absolute;
+        top: 16px;
+        right: 18px;
+        border: none;
+        background: none;
+        font-size: 22px;
+        cursor: pointer;
+        color: var(--muted);
+        line-height: 1;
+        padding: 6px 10px;
+        border-radius: 8px;
+      }
+      .closebtn:hover {
+        color: var(--ink);
+        background: var(--rule-soft);
+      }
+
+      /* ---------- hero ---------- */
+      header.hero {
+        padding: 64px 0 40px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .hero .label {
+        margin-bottom: 18px;
+        display: block;
+      }
+      .hero h1 {
+        font-size: clamp(38px, 7vw, 76px);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        max-width: 16ch;
+      }
+      .hero .sub {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(17px, 2.4vw, 22px);
+        color: var(--accent-deep);
+        font-weight: 500;
+        margin-top: 14px;
+      }
+      .hero .dek {
+        font-size: 19px;
+        color: var(--muted);
+        max-width: 62ch;
+        margin-top: 22px;
+      }
+      .hero .note {
+        font-size: 14.5px;
+        color: var(--muted);
+        max-width: 62ch;
+        margin-top: 16px;
+        padding-left: 14px;
+        border-left: 2px solid var(--accent);
+      }
+      .herostats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1px;
+        margin-top: 40px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .herostat {
+        background: var(--panel);
+        padding: 18px 18px 16px;
+      }
+      .herostat .v {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        display: flex;
+        align-items: baseline;
+        gap: 7px;
+      }
+      .herostat .k {
+        font-size: 12.5px;
+        color: var(--muted);
+        margin-top: 4px;
+        line-height: 1.35;
+      }
+
+      /* ---------- section frame ---------- */
+      section {
+        padding: 60px 0;
+        border-bottom: 1px solid var(--rule);
+        scroll-margin-top: var(--nav-h);
+      }
+      .shead {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      .shead .snum {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: var(--accent-deep);
+        font-weight: 600;
+        padding-top: 6px;
+      }
+      .shead h2 {
+        font-size: clamp(26px, 4vw, 40px);
+        font-weight: 600;
+      }
+      .shead .stag {
+        margin-left: auto;
+        align-self: center;
+      }
+      .lead {
+        font-size: 21px;
+        line-height: 1.55;
+        color: var(--ink);
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+      }
+      .prose p {
+        margin: 0 0 1em;
+        color: #1c242c;
+      }
+
+      /* ---------- map (landscape force list) ---------- */
+      .map {
+        margin-top: 30px;
+        display: grid;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .map .row {
+        background: var(--panel);
+        padding: 16px 20px;
+        display: flex;
+        gap: 16px;
+        align-items: baseline;
+      }
+      .map .row .mi {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--accent-deep);
+        min-width: 28px;
+      }
+      .map .row .ml {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        min-width: 0;
+      }
+      .map .row .mb {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      /* ---------- skeptic / counterpoint callouts ---------- */
+      .callout {
+        margin-top: 28px;
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        border-left: 3px solid var(--warn);
+        border-radius: 10px;
+        padding: 20px 22px;
+      }
+      .callout .label {
+        color: var(--warn);
+        margin-bottom: 8px;
+        display: block;
+      }
+      .callout p {
+        margin: 0 0 0.7em;
+        color: #2a2f35;
+        font-size: 15.5px;
+      }
+      .callout p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ---------- forces ---------- */
+      .force {
+        padding: 30px 0;
+        border-top: 1px solid var(--rule-soft);
+      }
+      .force:first-child {
+        border-top: none;
+      }
+      .force .fkick {
+        display: flex;
+        gap: 12px;
+        align-items: baseline;
+      }
+      .force .fnum {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--accent-deep);
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .force h3 {
+        font-size: clamp(22px, 3vw, 30px);
+        margin: 6px 0 0;
+      }
+      .force .thesis {
+        font-size: 18.5px;
+        color: var(--accent-deep);
+        font-family: "Space Grotesk", sans-serif;
+        margin: 14px 0 18px;
+        max-width: 60ch;
+        line-height: 1.45;
+      }
+      .force .fbody {
+        max-width: var(--read);
+      }
+      .evidence {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 22px 0 4px;
+      }
+      .stat {
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        border-radius: 10px;
+        padding: 12px 14px;
+        min-width: 130px;
+        flex: 0 1 auto;
+      }
+      .stat .v {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .stat .k {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 3px;
+        max-width: 24ch;
+      }
+      .stat .cmp {
+        font-size: 11.5px;
+        color: var(--faint);
+        margin-top: 2px;
+      }
+
+      /* ---------- pull quote ---------- */
+      blockquote.pq {
+        margin: 32px 0;
+        padding: 4px 0 4px 24px;
+        border-left: 3px solid var(--accent);
+        max-width: 60ch;
+      }
+      blockquote.pq p {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 26px;
+        line-height: 1.3;
+        letter-spacing: -0.015em;
+        color: var(--ink);
+        margin: 0;
+      }
+      blockquote.pq cite {
+        display: block;
+        margin-top: 10px;
+        font-style: normal;
+        font-size: 13px;
+        color: var(--faint);
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      /* ---------- confidence dots + source pills ---------- */
+      .cdot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+        flex: none;
+      }
+      .cdot.verified {
+        background: var(--accent);
+      }
+      .cdot.secondary {
+        background: var(--warn);
+      }
+      .cdot.reported {
+        background: var(--grey);
+      }
+      .src {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11.5px;
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid var(--rule);
+        border-radius: 999px;
+        padding: 2px 9px;
+        transition: border-color 0.15s, color 0.15s;
+      }
+      .src:hover {
+        border-color: var(--accent);
+        color: var(--accent-deep);
+      }
+      .srclist {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        margin-top: 18px;
+      }
+      .srclist a {
+        text-decoration: none;
+        display: flex;
+        gap: 11px;
+        align-items: baseline;
+        padding: 9px 12px;
+        border: 1px solid var(--rule);
+        border-radius: 9px;
+        background: var(--panel);
+        transition: border-color 0.15s, transform 0.1s;
+      }
+      .srclist a:hover {
+        border-color: var(--accent);
+        transform: translateX(2px);
+      }
+      .srclist .st {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--accent-deep);
+        background: var(--accent-soft);
+        border-radius: 5px;
+        padding: 2px 6px;
+        flex: none;
+      }
+      .srclist .sx {
+        min-width: 0;
+      }
+      .srclist .sttl {
+        font-weight: 500;
+        font-size: 14.5px;
+        color: var(--ink);
+      }
+      .srclist .swhy {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .srclist .spub {
+        font-size: 11.5px;
+        color: var(--faint);
+        font-family: "JetBrains Mono", monospace;
+        margin-top: 1px;
+      }
+
+      /* ---------- metrics grid (data core) ---------- */
+      .metricgrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
+        gap: 14px;
+        margin-top: 8px;
+      }
+      .metric {
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        border-radius: 12px;
+        padding: 18px 18px 14px;
+        display: flex;
+        flex-direction: column;
+      }
+      .metric .v {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        line-height: 1;
+      }
+      .metric .k {
+        font-size: 13.5px;
+        color: var(--ink);
+        margin-top: 9px;
+        font-weight: 500;
+      }
+      .metric .cmp {
+        font-size: 12.5px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      .metric .foot {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: auto;
+        padding-top: 12px;
+      }
+      .metric .asof {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--faint);
+        margin-left: auto;
+      }
+
+      /* ---------- explorer table ---------- */
+      .tablewrap {
+        margin-top: 34px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .tabcontrols {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+      .chip {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        border: 1px solid var(--rule);
+        background: var(--panel);
+        color: var(--muted);
+        border-radius: 999px;
+        padding: 5px 12px;
+        cursor: pointer;
+        text-transform: lowercase;
+        transition: all 0.15s;
+      }
+      .chip.on {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+      }
+      table.cmp {
+        width: 100%;
+        min-width: 540px;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      table.cmp th {
+        text-align: left;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        text-transform: lowercase;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        font-weight: 500;
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--rule);
+        cursor: pointer;
+        user-select: none;
+        white-space: nowrap;
+      }
+      table.cmp th .ar {
+        color: var(--accent-deep);
+      }
+      table.cmp td {
+        padding: 11px 12px;
+        border-bottom: 1px solid var(--rule-soft);
+        vertical-align: middle;
+      }
+      table.cmp tr.crow {
+        cursor: pointer;
+        transition: background 0.12s;
+      }
+      table.cmp tr.crow:hover {
+        background: var(--rule-soft);
+      }
+      table.cmp .nm {
+        font-weight: 600;
+        font-family: "Space Grotesk", sans-serif;
+      }
+      .tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10.5px;
+        text-transform: lowercase;
+        letter-spacing: 0.04em;
+        color: var(--accent-deep);
+        background: var(--accent-soft);
+        border-radius: 5px;
+        padding: 2px 7px;
+        white-space: nowrap;
+      }
+      .tag.weak {
+        color: #7c530b;
+        background: #f6ead0;
+      }
+
+      /* ---------- company / founder cards ---------- */
+      .cards {
+        display: grid;
+        gap: 14px;
+        margin-top: 8px;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        border-radius: 14px;
+        overflow: hidden;
+        transition: border-color 0.15s, box-shadow 0.2s;
+      }
+      .card.open {
+        box-shadow: var(--shadow);
+        border-color: var(--accent);
+      }
+      .chead {
+        padding: 20px 22px;
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px 18px;
+        align-items: start;
+      }
+      .chead .top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .chead h3 {
+        font-size: 22px;
+      }
+      .chead .one {
+        color: var(--muted);
+        font-size: 15px;
+        margin-top: 6px;
+        grid-column: 1 / -1;
+      }
+      .chead .meta {
+        text-align: right;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--faint);
+        white-space: nowrap;
+      }
+      .chead .meta b {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .caret {
+        transition: transform 0.2s, color 0.15s;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .card.open .caret {
+        transform: rotate(90deg);
+      }
+      .chead:hover {
+        background: var(--rule-soft);
+      }
+      .card:hover .caret {
+        color: var(--accent-deep);
+      }
+      .cbody {
+        display: none;
+        padding: 4px 22px 24px;
+        border-top: 1px solid var(--rule-soft);
+      }
+      .card.open .cbody {
+        display: block;
+      }
+      .estonia {
+        margin: 16px 0;
+        font-size: 14px;
+        color: #2a2f35;
+        background: var(--accent-soft);
+        border-radius: 9px;
+        padding: 12px 14px;
+      }
+      .estonia .label {
+        color: var(--accent-deep);
+        margin-bottom: 5px;
+        display: block;
+      }
+      .kn {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin: 16px 0;
+      }
+      .founder .farc {
+        max-width: var(--read);
+      }
+      .ftags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      .social {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+      }
+      .social a {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--muted);
+        border: 1px solid var(--rule);
+        border-radius: 7px;
+        padding: 4px 10px;
+      }
+      .social a:hover {
+        border-color: var(--accent);
+        color: var(--accent-deep);
+      }
+      h4.mini {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        text-transform: lowercase;
+        letter-spacing: 0.1em;
+        color: var(--faint);
+        font-weight: 500;
+        margin: 20px 0 8px;
+      }
+
+      /* ---------- timeline ---------- */
+      .timeline {
+        margin-top: 18px;
+        border-left: 2px solid var(--rule);
+        padding-left: 0;
+      }
+      .tnode {
+        position: relative;
+        padding: 0 0 26px 30px;
+        margin-left: 8px;
+      }
+      .tnode::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--panel);
+        border: 2px solid var(--accent);
+      }
+      .tnode .ty {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 600;
+        color: var(--accent-deep);
+        font-size: 13px;
+      }
+      .tnode .tt {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: 17px;
+        margin: 2px 0 4px;
+      }
+      .tnode .tb {
+        color: var(--muted);
+        font-size: 14.5px;
+        max-width: 58ch;
+      }
+
+      /* ---------- author + colophon ---------- */
+      .author {
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        border-radius: 14px;
+        padding: 26px 28px;
+        margin-top: 8px;
+      }
+      .author .nm {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: 19px;
+      }
+      .author p {
+        color: var(--muted);
+        font-size: 15px;
+        max-width: 58ch;
+        margin: 10px 0 0;
+      }
+      .author .links {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      footer {
+        padding: 40px 0 80px;
+        color: var(--faint);
+        font-size: 13px;
+      }
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin: 6px 0 26px;
+      }
+      .legend .li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      @media (max-width: 860px) {
+        body {
+          font-size: 16px;
+        }
+        .navlinks {
+          display: none;
+        }
+        #rail {
+          display: none;
+        }
+        .chead .meta {
+          display: none;
+        }
+        .shead .stag {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progress"></div>
+    <nav>
+      <span class="brand">Estonia<b>·</b><span class="mono" style="font-size: 12px; color: var(--faint)"> field guide</span></span>
+      <div class="navlinks" id="navlinks"></div>
+      <div class="navright">
+        <span id="now"></span>
+        <button class="idxbtn" id="idxbtn">index</button>
+      </div>
+    </nav>
+
+    <div id="rail"></div>
+
+    <header class="hero">
+      <div class="wrap">
+        <span class="label" id="kicker"></span>
+        <h1 id="title"></h1>
+        <div class="sub" id="subtitle"></div>
+        <p class="dek" id="dek"></p>
+        <p class="note" id="readnote"></p>
+        <div class="herostats" id="herostats"></div>
+      </div>
+    </header>
+
+    <main class="wrap" id="main"></main>
+
+    <div id="scrim"></div>
+    <aside id="indexPanel">
+      <button class="closebtn" id="closeIdx" aria-label="close">×</button>
+      <h4>contents</h4>
+      <div id="idxContents"></div>
+    </aside>
+
+    <script id="data" type="application/json">
+      __DATA__
+    </script>
+    <script>
+      var DATA = JSON.parse(document.getElementById("data").textContent);
+
+      function esc(s) {
+        return String(s == null ? "" : s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+      function smart(s) {
+        s = String(s == null ? "" : s);
+        s = s.replace(/ -- /g, " — ").replace(/ - /g, " — ");
+        s = s.replace(/"([^"]*)"/g, "“$1”");
+        s = s.replace(/(\w)'(\w)/g, "$1’$2");
+        s = s.replace(/'([^']*)'/g, "‘$1’");
+        s = s.replace(/'/g, "’");
+        return s;
+      }
+      function tx(s) {
+        return esc(smart(s));
+      }
+      function paras(s) {
+        return String(s || "")
+          .split(/\n\n+/)
+          .map(function (x) {
+            return x.trim();
+          })
+          .filter(Boolean);
+      }
+      function proseHtml(s) {
+        return paras(s)
+          .map(function (p) {
+            return "<p>" + tx(p) + "</p>";
+          })
+          .join("");
+      }
+      function hostLabel(url) {
+        try {
+          return new URL(url).hostname.replace(/^www\./, "");
+        } catch (e) {
+          return "link";
+        }
+      }
+      function conf(c) {
+        c = (c || "reported").toLowerCase();
+        if (c.indexOf("verif") === 0) return "verified";
+        if (c.indexOf("second") === 0) return "secondary";
+        return "reported";
+      }
+      function cdot(c) {
+        var k = conf(c);
+        return '<span class="cdot ' + k + '" title="' + k + '"></span>';
+      }
+      function srcPill(url, txt) {
+        if (!url) return "";
+        return (
+          '<a class="src" href="' + esc(url) + '" target="_blank" rel="noopener">↗ ' + esc(txt || hostLabel(url)) + "</a>"
+        );
+      }
+      function yearNum(s) {
+        var m = String(s || "").match(/\d{4}/);
+        return m ? parseInt(m[0], 10) : 0;
+      }
+      // agents sometimes return narrative-rich founded_year / peak_valuation;
+      // these extract a clean atomic value for chips & the table.
+      function shortYear(s) {
+        var m = String(s || "").match(/\b(?:19|20)\d{2}\b/);
+        return m ? m[0] : String(s || "").trim().slice(0, 4) || "—";
+      }
+      function shortVal(s) {
+        s = String(s || "");
+        if (/not (publicly )?(disclosed|stated)|private|undisclosed|n\/a/i.test(s)) return "private";
+        var m = s.match(/~?\s*(US\$|\$|€|£)\s?([\d][\d.,]*)\s*(billion|bn|b|million|mn|m)?/i);
+        if (!m) return "—";
+        var cur = m[1].replace(/US\$/i, "$");
+        var num = m[2].replace(/,/g, "");
+        var u = (m[3] || "").toLowerCase();
+        var ul = /^b/.test(u) || /billion/.test(u) ? "B" : /^m/.test(u) ? "M" : "";
+        return cur + num + ul;
+      }
+
+      // ---- pull quote ----
+      function pqHtml(q) {
+        if (!q || !q.quote) return "";
+        var cite = q.attribution ? "<cite>" + tx(q.attribution) + (q.source_url ? '  ·  <a href="' + esc(q.source_url) + '" target="_blank" rel="noopener" style="color:inherit">source</a>' : "") + "</cite>" : "";
+        return '<blockquote class="pq"><p>“' + tx(q.quote) + "”</p>" + cite + "</blockquote>";
+      }
+      function firstQuote(arr) {
+        return arr && arr.length ? pqHtml(arr[0]) : "";
+      }
+
+      // ---- sources list ----
+      function srcListHtml(arr) {
+        if (!arr || !arr.length) return "";
+        return (
+          '<div class="srclist">' +
+          arr
+            .map(function (s) {
+              if (!s || !s.url) return "";
+              return (
+                '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' +
+                '<span class="st">' + esc((s.type || "link").slice(0, 9)) + "</span>" +
+                '<span class="sx"><span class="sttl">' + tx(s.title || hostLabel(s.url)) + "</span>" +
+                (s.why ? '<div class="swhy">' + tx(s.why) + "</div>" : "") +
+                '<div class="spub">' + esc([s.publisher, s.author].filter(Boolean).join(" · ") || hostLabel(s.url)) + "</div>" +
+                "</span></a>"
+              );
+            })
+            .join("") +
+          "</div>"
+        );
+      }
+
+      // ---- sourced number (stat chip) ----
+      function statChip(n) {
+        if (!n) return "";
+        return (
+          '<div class="stat"><div class="v">' + cdot(n.confidence) + tx(n.value) + "</div>" +
+          '<div class="k">' + tx(n.label) + "</div>" +
+          (n.comparison ? '<div class="cmp">' + tx(n.comparison) + "</div>" : "") +
+          (n.source_url ? '<div style="margin-top:8px">' + srcPill(n.source_url) + "</div>" : "") +
+          "</div>"
+        );
+      }
+
+      // ============ render ============
+      var M = DATA.meta || {};
+      var SEC = M.sections || [];
+
+      document.getElementById("kicker").textContent = "a field guide · updated " + (M.updated || "");
+      document.getElementById("title").textContent = M.title || "Estonia";
+      document.getElementById("subtitle").textContent = M.subtitle || "";
+      document.getElementById("dek").innerHTML = tx(M.dek || "");
+      document.getElementById("readnote").innerHTML = tx(M.reading_note || "");
+
+      // hero stats — pick salient metrics by keyword, fall back to first few
+      (function () {
+        var mt = DATA.metrics || [];
+        function find(re) {
+          for (var i = 0; i < mt.length; i++) if (re.test(mt[i].label || "")) return mt[i];
+          return null;
+        }
+        var picks = [
+          find(/per\s*(capita|million)/i),
+          find(/^(?!.*per).*unicorn/i) || find(/unicorn/i),
+          find(/population/i),
+          find(/AI|usage|adoption/i),
+        ].filter(Boolean);
+        // de-dup
+        var seen = {}, uniq = [];
+        picks.forEach(function (p) {
+          if (!seen[p.label]) {
+            seen[p.label] = 1;
+            uniq.push(p);
+          }
+        });
+        if (!uniq.length) uniq = mt.slice(0, 4);
+        var el = document.getElementById("herostats");
+        if (!uniq.length) {
+          el.style.display = "none";
+          return;
+        }
+        el.innerHTML = uniq
+          .slice(0, 4)
+          .map(function (n) {
+            return (
+              '<div class="herostat"><div class="v">' + cdot(n.confidence) + tx(n.value) + "</div>" +
+              '<div class="k">' + tx(n.label) + (n.source_url ? ' <a href="' + esc(n.source_url) + '" target="_blank" rel="noopener" style="color:var(--faint);text-decoration:none">↗</a>' : "") + "</div></div>"
+            );
+          })
+          .join("");
+      })();
+
+      // nav links
+      document.getElementById("navlinks").innerHTML = SEC.map(function (s) {
+        return '<a href="#' + s.id + '" data-sec="' + s.id + '">' + esc(s.label) + "</a>";
+      }).join("");
+
+      var main = document.getElementById("main");
+      var html = "";
+
+      function shead(s, tagHtml) {
+        return (
+          '<div class="shead"><span class="snum">' + esc(s.num) + "</span>" +
+          "<h2>" + esc(s.label) + "</h2>" +
+          (tagHtml ? '<span class="stag">' + tagHtml + "</span>" : "") +
+          "</div>"
+        );
+      }
+      function secById(id) {
+        return SEC.filter(function (s) {
+          return s.id === id;
+        })[0] || { id: id, num: "", label: id };
+      }
+
+      // ---- 01 landscape ----
+      var L = DATA.landscape;
+      if (L) {
+        var s = secById("landscape");
+        html += '<section id="landscape">' + shead(s);
+        html += '<div class="prose read">' + proseHtml(L.intro) + "</div>";
+        if (L.map && L.map.length) {
+          html +=
+            '<div class="map">' +
+            L.map
+              .map(function (m, i) {
+                return (
+                  '<div class="row"><span class="mi">' + (i + 1 < 10 ? "0" + (i + 1) : i + 1) + "</span>" +
+                  '<span class="ml">' + tx(m.label) + '</span><span class="mb">' + tx(m.blurb) + "</span></div>"
+                );
+              })
+              .join("") +
+            "</div>";
+        }
+        if (L.the_skeptic) {
+          html +=
+            '<div class="callout"><span class="label">the skeptic’s view</span>' +
+            proseHtml(L.the_skeptic) +
+            "</div>";
+        }
+        html += srcListHtml(L.sources);
+        html += "</section>";
+      }
+
+      // ---- 02 forces ----
+      var F = DATA.forces || [];
+      if (F.length) {
+        var s2 = secById("forces");
+        html += '<section id="forces">' + shead(s2);
+        F.forEach(function (f, i) {
+          html += '<div class="force" id="force-' + esc(f.id || f.slug || i) + '">';
+          html += '<div class="fkick"><span class="fnum">' + (i + 1 < 10 ? "0" + (i + 1) : i + 1) + "</span>";
+          if (f.kicker) html += '<span class="label">' + tx(f.kicker) + "</span>";
+          html += "</div>";
+          html += "<h3>" + tx(f.title) + "</h3>";
+          if (f.thesis) html += '<p class="thesis">' + tx(f.thesis) + "</p>";
+          html += '<div class="fbody prose">' + proseHtml(f.body) + "</div>";
+          if (f.evidence && f.evidence.length)
+            html += '<div class="evidence">' + f.evidence.map(statChip).join("") + "</div>";
+          html += firstQuote(f.pull_quotes);
+          if (f.counterpoint)
+            html +=
+              '<div class="callout"><span class="label">the catch</span>' + proseHtml(f.counterpoint) + "</div>";
+          html += srcListHtml(f.sources);
+          html += "</div>";
+        });
+        html += "</section>";
+      }
+
+      // ---- 03 data core ----
+      var MET = DATA.metrics || [];
+      var CO = DATA.companies || [];
+      if (MET.length || CO.length) {
+        var s3 = secById("data");
+        html += '<section id="data">' + shead(s3);
+        if (MET.length) {
+          html += '<p class="lead read" style="margin-bottom:24px">The anomaly in numbers. Every figure carries its source — tap the dot for confidence, the pill for the page it came from.</p>';
+          html += '<div class="metricgrid">' + MET.map(metricCard).join("") + "</div>";
+        }
+        if (CO.length) {
+          html += '<div class="tablewrap"><h4 class="mini">the companies, compared</h4>';
+          html += '<div class="tabcontrols" id="catChips"></div>';
+          html += '<table class="cmp"><thead id="cmpHead"></thead><tbody id="cmpBody"></tbody></table></div>';
+        }
+        html += "</section>";
+      }
+      function metricCard(n) {
+        return (
+          '<div class="metric"><div class="v">' + tx(n.value) + "</div>" +
+          '<div class="k">' + tx(n.label) + "</div>" +
+          (n.comparison ? '<div class="cmp">' + tx(n.comparison) + "</div>" : "") +
+          (n.detail ? '<div class="cmp">' + tx(n.detail) + "</div>" : "") +
+          '<div class="foot">' + cdot(n.confidence) + srcPill(n.source_url) +
+          (n.as_of ? '<span class="asof">' + esc(n.as_of) + "</span>" : "") +
+          "</div></div>"
+        );
+      }
+
+      // ---- 04 companies ----
+      if (CO.length) {
+        var s4 = secById("companies");
+        html += '<section id="companies">' + shead(s4, '<span class="label">' + CO.length + " profiles</span>");
+        html += '<div class="cards" id="coCards">' + CO.map(companyCard).join("") + "</div>";
+        html += "</section>";
+      }
+      function weakLink(c) {
+        return /weak|only a co-?founder|not (genuinely|really)|r&d office|hq (is )?(in )?(oslo|norway|london|us)|caveat/i.test(
+          (c.estonia_connection || "") + " " + (c.confidence_notes || "")
+        );
+      }
+      function companyCard(c, i) {
+        var fnd = (c.founders || []).map(function (f) {
+          return esc(f.name);
+        }).join(", ");
+        return (
+          '<div class="card" id="co-' + esc(c.id || c.slug || i) + '">' +
+          '<div class="chead" tabindex="0" role="button" aria-expanded="false">' +
+          '<div><div class="top"><span class="caret">▸</span><h3>' + tx(c.name) + "</h3>" +
+          (c.category ? '<span class="tag' + (weakLink(c) ? " weak" : "") + '">' + esc(c.category) + "</span>" : "") +
+          (c.status ? '<span class="label">' + esc(c.status) + "</span>" : "") +
+          "</div>" +
+          (c.one_liner ? '<div class="one">' + tx(c.one_liner) + "</div>" : "") +
+          "</div>" +
+          '<div class="meta">' + (c.founded_year ? "est <b>" + esc(shortYear(c.founded_year)) + "</b><br>" : "") +
+          (c.peak_valuation && shortVal(c.peak_valuation) !== "—" ? "<b>" + esc(shortVal(c.peak_valuation)) + "</b> peak" : "") + "</div>" +
+          "</div>" +
+          '<div class="cbody">' +
+          (c.category_detail ? '<div class="label" style="margin:2px 0 8px">' + esc(c.category_detail) + "</div>" : "") +
+          (c.estonia_connection
+            ? '<div class="estonia"><span class="label">the estonia link</span>' + tx(c.estonia_connection) + "</div>"
+            : "") +
+          '<div class="prose read">' + proseHtml(c.story) + "</div>" +
+          (c.why_it_matters ? '<h4 class="mini">why it matters</h4><div class="prose read">' + proseHtml(c.why_it_matters) + "</div>" : "") +
+          (c.key_numbers && c.key_numbers.length ? '<div class="kn">' + c.key_numbers.map(statChip).join("") + "</div>" : "") +
+          firstQuote(c.pull_quotes) +
+          (fnd ? '<h4 class="mini">founders</h4><div style="font-size:14px;color:var(--muted)">' + fnd + "</div>" : "") +
+          (c.current_status ? '<h4 class="mini">where it is now</h4><div class="prose read">' + proseHtml(c.current_status) + "</div>" : "") +
+          socialHtml(c.social) +
+          (c.sources && c.sources.length ? '<h4 class="mini">sources</h4>' + srcListHtml(c.sources) : "") +
+          "</div></div>"
+        );
+      }
+      function socialHtml(s) {
+        if (!s) return "";
+        var out = [];
+        ["site", "x", "linkedin", "substack"].forEach(function (k) {
+          if (s[k]) out.push('<a href="' + esc(s[k]) + '" target="_blank" rel="noopener">' + (k === "x" ? "X" : k) + "</a>");
+        });
+        return out.length ? '<div class="social">' + out.join("") + "</div>" : "";
+      }
+
+      // ---- 05 founders ----
+      var FO = DATA.founders || [];
+      if (FO.length) {
+        var s5 = secById("founders");
+        html += '<section id="founders">' + shead(s5, '<span class="label">' + FO.length + " people</span>");
+        html += '<div class="cards" id="foCards">' + FO.map(founderCard).join("") + "</div>";
+        html += "</section>";
+      }
+      function founderCard(f, i) {
+        return (
+          '<div class="card founder open" id="fo-' + esc(f.id || f.slug || i) + '">' +
+          '<div class="chead">' +
+          '<div><div class="top"><h3>' + tx(f.name) + "</h3>" +
+          (f.role ? '<span class="label">' + tx(f.role) + "</span>" : "") + "</div>" +
+          ((f.companies && f.companies.length) ? '<div class="ftags" style="margin-top:8px">' + f.companies.map(function (c) { return '<span class="tag">' + esc(c) + "</span>"; }).join("") + "</div>" : "") +
+          "</div></div>" +
+          '<div class="cbody" style="display:block">' +
+          '<div class="prose farc">' + proseHtml(f.arc) + "</div>" +
+          firstQuote(f.pull_quotes) +
+          (f.philosophy ? '<h4 class="mini">how they think</h4><div class="prose read">' + proseHtml(f.philosophy) + "</div>" : "") +
+          socialHtml(f.social) +
+          (f.sources && f.sources.length ? '<h4 class="mini">in their own words</h4>' + srcListHtml(f.sources) : "") +
+          "</div></div>"
+        );
+      }
+
+      // ---- 06 arc ----
+      var A = DATA.arc;
+      if (A && A.nodes && A.nodes.length) {
+        var s6 = secById("arc");
+        html += '<section id="arc">' + shead(s6);
+        if (A.intro) html += '<p class="lead read" style="margin-bottom:8px">' + tx(A.intro) + "</p>";
+        html +=
+          '<div class="timeline">' +
+          A.nodes
+            .slice()
+            .sort(function (a, b) {
+              return yearNum(a.year) - yearNum(b.year);
+            })
+            .map(function (n) {
+              return (
+                '<div class="tnode"><div class="ty">' + esc(n.year) + "</div>" +
+                '<div class="tt">' + tx(n.title) + "</div>" +
+                '<div class="tb">' + tx(n.blurb) + (n.source_url ? " " + srcPill(n.source_url, n.source_title ? n.source_title.slice(0, 22) : "") : "") + "</div></div>"
+              );
+            })
+            .join("") +
+          "</div>";
+        html += "</section>";
+      }
+
+      // ---- 07 sources & method ----
+      var SR = DATA.sources || [];
+      var s7 = secById("sources");
+      html += '<section id="sources">' + shead(s7);
+      var leg = (M.confidence_legend || []);
+      if (leg.length) {
+        html +=
+          '<div class="legend">' +
+          leg
+            .map(function (g) {
+              return '<span class="li">' + cdot(g.key) + "<b style=\"color:var(--ink);font-weight:600\">" + esc(g.label) + "</b> — " + esc(g.note) + "</span>";
+            })
+            .join("") +
+          "</div>";
+      }
+      if (SR.length) {
+        html += '<h4 class="mini">further reading — primary sources</h4>' + srcListHtml(SR);
+      }
+      // author
+      var AU = DATA.author;
+      if (AU) {
+        html += '<h4 class="mini" style="margin-top:34px">' + esc(AU.blogHeading || "about") + "</h4>";
+        html +=
+          '<div class="author"><div class="nm">' + tx(AU.name || "") + "</div>" +
+          (AU.blurb ? "<p>" + tx(AU.blurb) + "</p>" : "") +
+          (AU.links && AU.links.length
+            ? '<div class="links">' + AU.links.map(function (l) { return '<a class="src" href="' + esc(l.url) + '" target="_blank" rel="noopener">↗ ' + esc(l.label) + "</a>"; }).join("") + "</div>"
+            : "") +
+          "</div>";
+      }
+      html += "</section>";
+      html += '<footer class="wrap" style="padding-left:0;padding-right:0">Built with a multi-agent, source-gated research pipeline. Every number links to its source; uncertain claims are marked. ' + esc(M.updated || "") + ".</footer>";
+
+      main.innerHTML = html;
+
+      // ============ interactions ============
+      // company table (explorer)
+      (function () {
+        var body = document.getElementById("cmpBody");
+        if (!body) return;
+        var cats = {};
+        CO.forEach(function (c) {
+          if (c.category) cats[c.category] = 1;
+        });
+        var cur = "all";
+        var sortKey = "founded";
+        var sortDir = 1;
+        var cols = [
+          { k: "name", t: "company" },
+          { k: "category", t: "category" },
+          { k: "founded", t: "founded" },
+          { k: "status", t: "status" },
+          { k: "valuation", t: "peak value" },
+        ];
+        function val(c, k) {
+          if (k === "name") return (c.name || "").toLowerCase();
+          if (k === "founded") return yearNum(c.founded_year);
+          if (k === "valuation") {
+            var m = String(c.peak_valuation || "").match(/[\d.]+/);
+            var num = m ? parseFloat(m[0]) : 0;
+            if (/b/i.test(c.peak_valuation || "")) num *= 1000;
+            return num;
+          }
+          return (c[k] || "").toString().toLowerCase();
+        }
+        function head() {
+          document.getElementById("cmpHead").innerHTML =
+            "<tr>" +
+            cols
+              .map(function (c) {
+                var ar = sortKey === c.k ? ' <span class="ar">' + (sortDir > 0 ? "↑" : "↓") + "</span>" : "";
+                return '<th data-k="' + c.k + '" tabindex="0" title="sort by ' + c.t + '">' + c.t + ar + "</th>";
+              })
+              .join("") +
+            "</tr>";
+          [].forEach.call(document.querySelectorAll("#cmpHead th"), function (th) {
+            th.onclick = function () {
+              var k = th.getAttribute("data-k");
+              if (sortKey === k) sortDir *= -1;
+              else {
+                sortKey = k;
+                sortDir = 1;
+              }
+              render();
+            };
+          });
+        }
+        function chips() {
+          var el = document.getElementById("catChips");
+          var ks = ["all"].concat(Object.keys(cats).sort());
+          el.innerHTML = ks
+            .map(function (k) {
+              return '<span class="chip' + (k === cur ? " on" : "") + '" tabindex="0" role="button" data-c="' + esc(k) + '">' + esc(k) + "</span>";
+            })
+            .join("");
+          [].forEach.call(el.querySelectorAll(".chip"), function (ch) {
+            ch.onclick = function () {
+              cur = ch.getAttribute("data-c");
+              render();
+            };
+          });
+        }
+        function render() {
+          chips();
+          head();
+          var rows = CO.filter(function (c) {
+            return cur === "all" || c.category === cur;
+          }).sort(function (a, b) {
+            var x = val(a, sortKey), y = val(b, sortKey);
+            return (x < y ? -1 : x > y ? 1 : 0) * sortDir;
+          });
+          body.innerHTML = rows
+            .map(function (c) {
+              return (
+                '<tr class="crow" tabindex="0" data-id="co-' + esc(c.id || c.slug) + '">' +
+                '<td class="nm">' + tx(c.name) + "</td>" +
+                '<td>' + (c.category ? '<span class="tag' + (weakLink(c) ? " weak" : "") + '">' + esc(c.category) + "</span>" : "") + "</td>" +
+                "<td>" + esc(shortYear(c.founded_year)) + "</td>" +
+                "<td>" + esc(c.status || "—") + "</td>" +
+                "<td>" + esc(shortVal(c.peak_valuation)) + "</td>" +
+                "</tr>"
+              );
+            })
+            .join("");
+          [].forEach.call(body.querySelectorAll(".crow"), function (tr) {
+            tr.onclick = function () {
+              var id = tr.getAttribute("data-id");
+              var card = document.getElementById(id);
+              if (card) {
+                card.classList.add("open");
+                card.scrollIntoView({ behavior: "smooth", block: "center" });
+              }
+            };
+          });
+        }
+        render();
+      })();
+
+      // expandable company cards
+      [].forEach.call(document.querySelectorAll("#coCards .chead"), function (h) {
+        h.onclick = function () {
+          var open = h.parentNode.classList.toggle("open");
+          h.setAttribute("aria-expanded", open ? "true" : "false");
+        };
+      });
+
+      // keyboard operability: Enter/Space activates non-native controls
+      document.addEventListener("keydown", function (e) {
+        if (e.key !== "Enter" && e.key !== " ") return;
+        var t = e.target;
+        if (t.matches && t.matches("#coCards .chead, .chip, #rail .dot, table.cmp th, tr.crow")) {
+          e.preventDefault();
+          t.click();
+        }
+      });
+
+      // ---- right rail + nav active + progress + index ----
+      (function () {
+        var rail = document.getElementById("rail");
+        rail.innerHTML = SEC.map(function (s) {
+          return '<div class="dot" tabindex="0" role="button" aria-label="Jump to ' + esc(s.label) + '" data-sec="' + s.id + '" data-label="' + esc(s.label) + '"></div>';
+        }).join("");
+        [].forEach.call(rail.querySelectorAll(".dot"), function (d) {
+          d.onclick = function () {
+            var el = document.getElementById(d.getAttribute("data-sec"));
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+          };
+        });
+
+        var seen = {};
+        var navA = document.querySelectorAll("#navlinks a");
+        function setActive(id) {
+          [].forEach.call(navA, function (a) {
+            a.classList.toggle("on", a.getAttribute("data-sec") === id);
+          });
+          [].forEach.call(rail.querySelectorAll(".dot"), function (d) {
+            d.classList.toggle("on", d.getAttribute("data-sec") === id);
+          });
+          var idx = SEC.map(function (s) { return s.id; }).indexOf(id);
+          var sec = secById(id);
+          document.getElementById("now").innerHTML =
+            (idx + 1) + "/" + SEC.length + " · <b>" + esc(sec.label) + "</b>";
+        }
+        var obs = new IntersectionObserver(
+          function (ents) {
+            ents.forEach(function (e) {
+              if (e.isIntersecting) {
+                var id = e.target.id;
+                seen[id] = 1;
+                setActive(id);
+                var dot = rail.querySelector('.dot[data-sec="' + id + '"]');
+                // mark all up to this as done
+                var passed = false;
+                SEC.forEach(function (s) {
+                  var dd = rail.querySelector('.dot[data-sec="' + s.id + '"]');
+                  if (dd) dd.classList.toggle("done", seen[s.id] === 1);
+                });
+                buildIndex();
+              }
+            });
+          },
+          { rootMargin: "-45% 0px -50% 0px" }
+        );
+        [].forEach.call(document.querySelectorAll("main section"), function (s) {
+          obs.observe(s);
+        });
+
+        // progress bar
+        function onScroll() {
+          var h = document.documentElement;
+          var max = h.scrollHeight - h.clientHeight;
+          document.getElementById("progress").style.width = max > 0 ? (h.scrollTop / max) * 100 + "%" : "0";
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+
+        // index panel
+        function buildIndex() {
+          var out = "";
+          SEC.forEach(function (s) {
+            var ck = seen[s.id] ? ' <span style="color:var(--accent-deep)">✓</span>' : "";
+            out += '<a href="#' + s.id + '"><span class="n">' + esc(s.num) + '</span><span>' + esc(s.label) + ck + "</span></a>";
+            if (s.id === "companies") {
+              (DATA.companies || []).forEach(function (c) {
+                out += '<a class="sub" href="#co-' + esc(c.id || c.slug) + '">' + tx(c.name) + "</a>";
+              });
+            }
+            if (s.id === "founders") {
+              (DATA.founders || []).forEach(function (f) {
+                out += '<a class="sub" href="#fo-' + esc(f.id || f.slug) + '">' + tx(f.name) + "</a>";
+              });
+            }
+          });
+          document.getElementById("idxContents").innerHTML = out;
+          [].forEach.call(document.querySelectorAll("#idxContents a"), function (a) {
+            a.onclick = function () {
+              closeIdx();
+              var t = document.getElementById(a.getAttribute("href").slice(1));
+              if (t && t.classList.contains("card")) t.classList.add("open");
+            };
+          });
+        }
+        buildIndex();
+
+        var panel = document.getElementById("indexPanel");
+        var scrim = document.getElementById("scrim");
+        function openIdx() {
+          panel.classList.add("open");
+          scrim.classList.add("open");
+        }
+        function closeIdx() {
+          panel.classList.remove("open");
+          scrim.classList.remove("open");
+        }
+        document.getElementById("idxbtn").onclick = openIdx;
+        document.getElementById("closeIdx").onclick = closeIdx;
+        scrim.onclick = closeIdx;
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeIdx();
+        });
+      })();
+    </script>
+  </body>
+</html>

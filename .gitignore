@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+.vercel/
+.review/
+*.log
+# raw per-agent research dumps are large + intermediate; research.json is the
+# committed source of truth. Keep raw out of git but on disk for resumability.
+research-raw/
+
+.playwright-mcp/
+estonia-*.png
