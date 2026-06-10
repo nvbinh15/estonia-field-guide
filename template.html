@@ -1070,6 +1070,12 @@
         gap: 4px;
         overflow: hidden;
       }
+      .typogram .tlogo {
+        width: 54%;
+        max-height: 32%;
+        object-fit: contain;
+        filter: none;
+      }
       .typogram .big {
         font-family: "Fraunces", serif;
         font-weight: 300;
@@ -1235,6 +1241,9 @@
         border-top: none;
         padding-top: 16px;
       }
+      .fprofile.flip {
+        grid-template-columns: minmax(0, 1fr) 300px;
+      }
       .fprofile.flip .pmedia {
         order: 2;
       }
@@ -1269,7 +1278,7 @@
       .monogram span {
         font-family: "Fraunces", serif;
         font-weight: 300;
-        font-size: 110px;
+        font-size: 84px;
         color: transparent;
         -webkit-text-stroke: 1.4px var(--accent-deep);
         letter-spacing: 0.02em;
@@ -1878,10 +1887,16 @@
         html += '<div class="wrap">';
         feats.forEach(function (c, i) {
           var slot = (SLOTS.companies || {})[c.id];
-          var media = slot
-            ? figureHtml(slot, {})
-            : '<div class="typogram"><span class="big">' + tx(c.name) + '</span><span class="sub">' +
-              esc(c.category || "") + " · est " + esc(shortYear(c.founded_year)) + "</span></div>";
+          var sim = slot ? IMG[slot] : null;
+          var plateSub = '<span class="sub">' + esc(c.category || "") + " · est " + esc(shortYear(c.founded_year)) + "</span>";
+          var media;
+          if (sim && /^logo-/.test(sim.slug)) {
+            media = '<div class="typogram"><img class="tlogo" src="' + esc(sim.file) + '" alt="' + esc(sim.alt) + '" loading="lazy" />' + plateSub + "</div>";
+          } else if (sim) {
+            media = figureHtml(slot, {});
+          } else {
+            media = '<div class="typogram"><span class="big">' + tx(c.name) + "</span>" + plateSub + "</div>";
+          }
           html += '<article class="feature' + (i % 2 ? " flip" : "") + '" id="co-' + esc(c.id) + '">';
           html += '<div class="fmedia">' + media + "</div>";
           html += '<div class="ftxt"><div class="ftag"><span class="tag' + (weakLink(c) ? " weak" : "") + '">' + esc(c.category || "") + "</span>" +

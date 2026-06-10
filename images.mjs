@@ -134,6 +134,27 @@ export const IMAGES = [
     source: "https://commons.wikimedia.org/wiki/File:Lennart_Meri_1929-2006.jpg",
     remote: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Lennart_Meri_1929-2006.jpg",
   },
+  // brand wordmarks (public-domain text logos, hosted on Commons)
+  {
+    slug: "logo-skype",
+    file: "images/logo-skype.svg",
+    alt: "Skype wordmark",
+    caption: "",
+    credit: "Skype wordmark — a Microsoft trademark",
+    license: "Public domain (text logo)",
+    source: "https://commons.wikimedia.org/wiki/File:Skype_logo_(fully_transparent).svg",
+    remote: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Skype_logo_%28fully_transparent%29.svg",
+  },
+  {
+    slug: "logo-wise",
+    file: "images/logo-wise.svg",
+    alt: "Wise wordmark",
+    caption: "",
+    credit: "Wise wordmark — a Wise plc trademark",
+    license: "Public domain (text logo)",
+    source: "https://commons.wikimedia.org/wiki/File:New_Wise_(formerly_TransferWise)_logo.svg",
+    remote: "https://upload.wikimedia.org/wikipedia/commons/8/81/New_Wise_%28formerly_TransferWise%29_logo.svg",
+  },
   // founder portraits (identity-verified files only)
   {
     slug: "founder-ilves",
@@ -199,7 +220,7 @@ export const IMAGE_SLOTS = {
     "small-market": "aerial",
     "ai-nation": "starship-tartu",
   },
-  companies: { bolt: "bolt-scooter", starship: "starship-winter" },
+  companies: { bolt: "bolt-scooter", starship: "starship-winter", skype: "logo-skype", wise: "logo-wise" },
   founders: {
     ilves: "founder-ilves",
     "jaan-tallinn": "founder-jaan-tallinn",

@@ -224,6 +224,24 @@
         "source": "https://commons.wikimedia.org/wiki/File:Lennart_Meri_1929-2006.jpg"
       },
       {
+        "slug": "logo-skype",
+        "file": "images/logo-skype.svg",
+        "alt": "Skype wordmark",
+        "caption": "",
+        "credit": "Skype wordmark — a Microsoft trademark",
+        "license": "Public domain (text logo)",
+        "source": "https://commons.wikimedia.org/wiki/File:Skype_logo_(fully_transparent).svg"
+      },
+      {
+        "slug": "logo-wise",
+        "file": "images/logo-wise.svg",
+        "alt": "Wise wordmark",
+        "caption": "",
+        "credit": "Wise wordmark — a Wise plc trademark",
+        "license": "Public domain (text logo)",
+        "source": "https://commons.wikimedia.org/wiki/File:New_Wise_(formerly_TransferWise)_logo.svg"
+      },
+      {
         "slug": "founder-ilves",
         "file": "images/founder-ilves.jpg",
         "alt": "Toomas Hendrik Ilves, President of Estonia 2006–2016",
@@ -285,7 +303,9 @@
       },
       "companies": {
         "bolt": "bolt-scooter",
-        "starship": "starship-winter"
+        "starship": "starship-winter",
+        "skype": "logo-skype",
+        "wise": "logo-wise"
       },
       "founders": {
         "ilves": "founder-ilves",
