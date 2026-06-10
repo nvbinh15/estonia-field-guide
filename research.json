@@ -278,6 +278,26 @@
         "source": "https://commons.wikimedia.org/wiki/File:Sten_Tamkivi,_Arvamusfestival_2015.jpg"
       },
       {
+        "slug": "founder-taavet-hinrikus",
+        "file": "images/founder-taavet-hinrikus.jpg",
+        "alt": "Taavet Hinrikus speaking at the opening of the 'Unity' dome, Brussels, 2017",
+        "caption": "",
+        "credit": "Tauno Tõhk / EU2017EE",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Opening_of_the_'Unity'_dome_in_Justus_Lipsius_building_(35836648165).jpg",
+        "objpos": "68% center"
+      },
+      {
+        "slug": "founder-kaarel-kotkas",
+        "file": "images/founder-kaarel-kotkas.jpg",
+        "alt": "Kaarel Kotkas, co-founder and CEO of Veriff, on centre stage at Web Summit Rio 2025",
+        "caption": "",
+        "credit": "Sam Barnes / Web Summit via Sportsfile",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:SAM_1919_(54483214111).jpg",
+        "objpos": "45% center"
+      },
+      {
         "slug": "founder-markus-villig",
         "file": "images/founder-markus-villig.jpg",
         "alt": "Markus Villig, founder and CEO of Bolt, on stage at Web Summit 2022",
@@ -310,7 +330,9 @@
       "founders": {
         "ilves": "founder-ilves",
         "jaan-tallinn": "founder-jaan-tallinn",
+        "taavet-hinrikus": "founder-taavet-hinrikus",
         "kristo-kaarmann": "founder-kristo-kaarmann",
+        "kaarel-kotkas": "founder-kaarel-kotkas",
         "sten-tamkivi": "founder-sten-tamkivi",
         "markus-villig": "founder-markus-villig"
       },

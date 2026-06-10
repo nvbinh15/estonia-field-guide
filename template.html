@@ -1944,7 +1944,7 @@
           var im = slot ? IMG[slot] : null;
           var initials = (f.name || "?").split(/\s+/).map(function (w) { return w[0]; }).slice(0, 2).join("");
           var media = im
-            ? '<img src="' + esc(im.file) + '" alt="' + esc(im.alt) + '" loading="lazy" /><span class="fcredit">' + esc(im.credit) + " / " + esc(im.license) + "</span>"
+            ? '<img src="' + esc(im.file) + '" alt="' + esc(im.alt) + '"' + (im.objpos ? ' style="object-position:' + esc(im.objpos) + '"' : "") + ' loading="lazy" /><span class="fcredit">' + esc(im.credit) + " / " + esc(im.license) + "</span>"
             : '<div class="monogram"><span>' + esc(initials) + "</span><i>no free-licensed portrait exists</i></div>";
           html += '<article class="fprofile' + (i % 2 ? " flip" : "") + '" id="fo-' + esc(f.id || i) + '">';
           html += '<div class="pmedia">' + media + "</div>";
