@@ -7,7 +7,8 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { COMPANIES, FOUNDERS, FORCES } from "./roster.mjs";
-import { META, AUTHOR } from "./content.mjs";
+import { META, AUTHOR, CHART } from "./content.mjs";
+import { IMAGES, IMAGE_SLOTS } from "./images.mjs";
 
 const dir = dirname(fileURLToPath(import.meta.url));
 const raw = (name) => {
@@ -116,6 +117,12 @@ const metrics = gateNumbers(context.metrics?.items || context.metrics || [], "me
 const out = {
   meta: META,
   author: AUTHOR,
+  chart: CHART,
+  images: {
+    // strip the download-only `remote` field from the published data
+    list: IMAGES.map(({ remote, ...rest }) => rest),
+    slots: IMAGE_SLOTS,
+  },
   landscape: context.landscape || null,
   forces,
   metrics,

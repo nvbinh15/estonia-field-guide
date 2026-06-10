@@ -79,6 +79,229 @@
       }
     ]
   },
+  "chart": {
+    "title": "unicorns per million inhabitants — europe",
+    "note": "Highest unicorn density per capita of any European country; nearest peers shown. Invest in Estonia's analysis of Atomico/Dealroom data, Dec 2022.",
+    "source_url": "https://investinestonia.com/estonia-leads-europe-in-startups-unicorns-and-investments-per-capita/",
+    "confidence": "reported",
+    "rows": [
+      {
+        "n": "Estonia",
+        "v": 7.7,
+        "on": true
+      },
+      {
+        "n": "Luxembourg",
+        "v": 3.1
+      },
+      {
+        "n": "United Kingdom",
+        "v": 1.6
+      },
+      {
+        "n": "Germany",
+        "v": 0.6
+      }
+    ]
+  },
+  "images": {
+    "list": [
+      {
+        "slug": "cover",
+        "file": "images/cover.jpg",
+        "alt": "Tallinn skyline at night, the medieval old town lit against a dark sky",
+        "caption": "Tallinn at night — a medieval old town wrapped around a digital state.",
+        "credit": "Zvpunry",
+        "license": "CC BY 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Tallinn_at_night.jpg"
+      },
+      {
+        "slug": "aerial",
+        "file": "images/aerial.jpg",
+        "alt": "Aerial view of Tallinn, Estonia",
+        "caption": "The whole market, from above. Tallinn holds a third of Estonia's 1.37 million people.",
+        "credit": "kallerna",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Tallinn_aerial_2022.jpg"
+      },
+      {
+        "slug": "ulemiste",
+        "file": "images/ulemiste.jpg",
+        "alt": "Modern office buildings of Ülemiste City technology campus in Tallinn",
+        "caption": "Ülemiste City — Tallinn's largest tech campus, built on a former industrial estate.",
+        "credit": "Liilia Moroz",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:%C3%9Clemiste_City_2022.jpg"
+      },
+      {
+        "slug": "telliskivi",
+        "file": "images/telliskivi.jpg",
+        "alt": "Telliskivi Creative City, converted industrial buildings in Tallinn",
+        "caption": "Telliskivi Creative City — the converted rail-yard district at the heart of Tallinn's startup scene.",
+        "credit": "Ivo Kruusamägi",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Telliskivi_(2023)_-_002.jpg"
+      },
+      {
+        "slug": "starship-tartu",
+        "file": "images/starship-tartu.jpg",
+        "alt": "A Starship delivery robot on a street in central Tartu, Estonia, 2017",
+        "caption": "A Starship delivery robot in central Tartu, 2017 — autonomy as street furniture.",
+        "credit": "Sillerkiil",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Idufirma_Starship_pakirobot_Tartu_kesklinnas_2017._aastal..jpg"
+      },
+      {
+        "slug": "starship-winter",
+        "file": "images/starship-winter.jpg",
+        "alt": "A Starship delivery robot driving through snow",
+        "caption": "A Starship robot at work in winter. The fleet has made millions of autonomous deliveries.",
+        "credit": "Mbrickn",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Starship_Robot_in_Winter.jpg"
+      },
+      {
+        "slug": "eres-card",
+        "file": "images/eres-card.jpg",
+        "alt": "An Estonian e-Residency starter kit with digital ID card",
+        "caption": "The e-Residency kit — a country, issued as a card and a PIN.",
+        "credit": "Masayuki (Yuki) Kawagishi",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:E-Residency_card.jpg"
+      },
+      {
+        "slug": "id-card",
+        "file": "images/id-card.jpg",
+        "alt": "An Estonian digital identity card issued to an e-resident, 2022",
+        "caption": "The cryptographic ID card — the keystone of the e-state. Every signature it makes is legally binding.",
+        "credit": "Lamb104",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Estonian_Digital_Identity_Card_Issued_to_E-Resident_-_Issued_2022.jpg"
+      },
+      {
+        "slug": "tartu",
+        "file": "images/tartu.jpg",
+        "alt": "The neoclassical main building of the University of Tartu",
+        "caption": "The University of Tartu, founded 1632. Playtech and Skype's engine both trace back to this town.",
+        "credit": "Ivar Leidus",
+        "license": "CC BY-SA 3.0 EE",
+        "source": "https://commons.wikimedia.org/wiki/File:Tartu_%C3%9Clikooli_peahoone_2012.jpg"
+      },
+      {
+        "slug": "bolt-scooter",
+        "file": "images/bolt-scooter.jpg",
+        "alt": "A Bolt electric scooter parked on a city street",
+        "caption": "Bolt hardware on the street. The Tallinn-built super-app runs rides, scooters and delivery in 50+ countries.",
+        "credit": "RickRichards",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Bolt_electric_scooter.jpg"
+      },
+      {
+        "slug": "ccdcoe",
+        "file": "images/ccdcoe.jpg",
+        "alt": "Estonian and NATO flags at the Cooperative Cyber Defence Centre of Excellence in Tallinn",
+        "caption": "NATO's cyber-defence centre, Tallinn — the institutional payoff of the 2007 attacks.",
+        "credit": "Tony Webster",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:CCDCOE_Estonia_and_NATO_Flags_(53861557427).jpg"
+      },
+      {
+        "slug": "bronze",
+        "file": "images/bronze.jpg",
+        "alt": "The Bronze Soldier monument in Tallinn, 2007",
+        "caption": "The Bronze Soldier, 2007. Moving it triggered riots — and the cyberattacks that built a doctrine.",
+        "credit": "gette",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Bronze_Soldier_of_Tallinn,_2007.jpg"
+      },
+      {
+        "slug": "meri",
+        "file": "images/meri.jpg",
+        "alt": "Lennart Meri, President of Estonia 1992–2001",
+        "caption": "Lennart Meri, the president who announced Tiger Leap on national television in 1996.",
+        "credit": "Jens-Olaf Walter",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Lennart_Meri_1929-2006.jpg"
+      },
+      {
+        "slug": "founder-ilves",
+        "file": "images/founder-ilves.jpg",
+        "alt": "Toomas Hendrik Ilves, President of Estonia 2006–2016",
+        "caption": "",
+        "credit": "Chatham House",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Toomas_Hendrik_Ilves,_President_of_Estonia_(25502212355).jpg"
+      },
+      {
+        "slug": "founder-jaan-tallinn",
+        "file": "images/founder-jaan-tallinn.jpg",
+        "alt": "Jaan Tallinn, founding engineer of Skype",
+        "caption": "",
+        "credit": "Christopher Michel",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Jaan_Tallinn_2014.jpg"
+      },
+      {
+        "slug": "founder-kristo-kaarmann",
+        "file": "images/founder-kristo-kaarmann.jpg",
+        "alt": "Kristo Käärmann, co-founder and CEO of Wise",
+        "caption": "",
+        "credit": "Estonian Foreign Ministry",
+        "license": "CC BY 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Kristo_K%C3%A4%C3%A4rmann_2025.jpg"
+      },
+      {
+        "slug": "founder-sten-tamkivi",
+        "file": "images/founder-sten-tamkivi.jpg",
+        "alt": "Sten Tamkivi speaking at Arvamusfestival, 2015",
+        "caption": "",
+        "credit": "Kärt Vajakas",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Sten_Tamkivi,_Arvamusfestival_2015.jpg"
+      },
+      {
+        "slug": "founder-markus-villig",
+        "file": "images/founder-markus-villig.jpg",
+        "alt": "Markus Villig, founder and CEO of Bolt, on stage at Web Summit 2022",
+        "caption": "",
+        "credit": "Web Summit",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2022_-_Centre_Stage_RC2_8940_(52472376160).jpg"
+      }
+    ],
+    "slots": {
+      "cover": "cover",
+      "breaks": [
+        "telliskivi",
+        "aerial"
+      ],
+      "forces": {
+        "digital-state": "id-card",
+        "skype-mafia": "ulemiste",
+        "education": "tartu",
+        "e-residency": "eres-card",
+        "small-market": "aerial",
+        "ai-nation": "starship-tartu"
+      },
+      "companies": {
+        "bolt": "bolt-scooter",
+        "starship": "starship-winter"
+      },
+      "founders": {
+        "ilves": "founder-ilves",
+        "jaan-tallinn": "founder-jaan-tallinn",
+        "kristo-kaarmann": "founder-kristo-kaarmann",
+        "sten-tamkivi": "founder-sten-tamkivi",
+        "markus-villig": "founder-markus-villig"
+      },
+      "timeline": {
+        "1996": "meri",
+        "2007": "bronze",
+        "2008": "ccdcoe",
+        "2014": "eres-card"
+      }
+    }
+  },
   "landscape": {
     "intro": "Estonia should not exist as a tech nation. With roughly 1.3 million people, it has fewer residents than a mid-sized city, regained independence from the Soviet Union only in 1991, and started the decade with rotary phones and a wrecked planned economy. Yet by 2025 the Tax Foundation had ranked its tax code the most competitive in the OECD for the twelfth consecutive year; the OECD's PISA tests put its 15-year-olds at the top of Europe; and the country claims more startup unicorns per capita than anywhere else on the continent — Skype, Playtech, Wise, Bolt, Pipedrive, Veriff and others, ten in total by the e-Residency programme's count. Citizens file taxes online in minutes, vote over the internet, and sign legally binding documents with a national digital ID; the state declares 99–100% of public services available online.\n\nThis is the anomaly the guide unpacks: how a country too small to matter on any absolute scale engineered itself into a per-capita outlier. The short answer is that smallness was the strategy, not the obstacle. A nation of 1.3 million has no large domestic market to sell into, so its companies were born global from day one. It has no spare population to staff a bloated bureaucracy, so it digitized the state. It had no legacy IT systems to defend in 1996, so it leapfrogged. And when its first big tech company, Skype, sold to eBay and then Microsoft, the windfall did not leave — it recompounded into a dense local network of founders, angels and engineers.\n\nThe guide maps seven reinforcing forces — the digital state, the Skype Mafia, an education system wired since 1996, a 0% tax on reinvested profits, the e-Residency experiment, born-global smallness, and a fresh national bet on AI in schools — and then, in a mandatory skeptic's section, separates what is genuinely durable from what is brochure. Estonia markets itself extraordinarily well. Part of the job here is to read past the marketing.",
     "map": [

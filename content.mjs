@@ -27,6 +27,21 @@ export const META = {
   ],
 };
 
+// The comparison chart in "The numbers". All rows come from the same Invest in
+// Estonia analysis of Atomico/Dealroom data (Dec 2022) — one shared source.
+export const CHART = {
+  title: "unicorns per million inhabitants — europe",
+  note: "Highest unicorn density per capita of any European country; nearest peers shown. Invest in Estonia's analysis of Atomico/Dealroom data, Dec 2022.",
+  source_url: "https://investinestonia.com/estonia-leads-europe-in-startups-unicorns-and-investments-per-capita/",
+  confidence: "reported",
+  rows: [
+    { n: "Estonia", v: 7.7, on: true },
+    { n: "Luxembourg", v: 3.1 },
+    { n: "United Kingdom", v: 1.6 },
+    { n: "Germany", v: 0.6 },
+  ],
+};
+
 export const AUTHOR = {
   name: "Binh Nguyen",
   blurb:
