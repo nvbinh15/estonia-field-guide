@@ -160,12 +160,8 @@
         flex: none;
         border-radius: 3px;
       }
-      nav.scrolled .brand .wordmark {
-        display: none;
-      }
-      nav.scrolled .brand .flag {
-        display: block;
-      }
+      /* the wordmark<->flag swap is scoped to <=1020px (mobile + tablet) in the
+         responsive block; desktop always keeps the full wordmark */
       .navlinks {
         display: flex;
         gap: 2px;
@@ -1507,6 +1503,9 @@
 
       /* ---------- responsive ---------- */
       @media (max-width: 1020px) {
+        /* mobile + tablet only: trade the wordmark for the compact flag once scrolled */
+        nav.scrolled .brand .wordmark { display: none; }
+        nav.scrolled .brand .flag { display: block; }
         /* even-force rule below is specificity 0,3,0 — must be matched here or the
            two-column 280px+col grid survives on mobile and overflows the viewport */
         .fgrid,
