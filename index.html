@@ -824,7 +824,7 @@
       }
       .srclist {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 310px), 1fr));
         gap: 10px;
         margin-top: 18px;
       }
@@ -946,7 +946,7 @@
       }
       .metricwall {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
         gap: 1px;
         background: var(--dark-rule);
         border: 1px solid var(--dark-rule);
@@ -1478,7 +1478,10 @@
 
       /* ---------- responsive ---------- */
       @media (max-width: 1020px) {
-        .fgrid { grid-template-columns: 1fr; }
+        /* even-force rule below is specificity 0,3,0 — must be matched here or the
+           two-column 280px+col grid survives on mobile and overflows the viewport */
+        .fgrid,
+        .force:nth-of-type(even) .fgrid { grid-template-columns: minmax(0, 1fr); }
         .frail { position: static; flex-direction: row; flex-wrap: wrap; gap: 8px 28px; }
         .force:nth-of-type(even) .fgrid aside { order: 2; }
         .frail .rlabel { width: 100%; }
@@ -1489,12 +1492,20 @@
       @media (max-width: 860px) {
         body { font-size: 16px; }
         .navlinks, #rail { display: none; }
-        .feature { grid-template-columns: 1fr; gap: 24px; }
+        .feature { grid-template-columns: minmax(0, 1fr); gap: 24px; }
         .feature.flip .fmedia { order: 0; }
-        .fprofile { grid-template-columns: 1fr; gap: 20px; }
+        /* .fprofile.flip is specificity 0,2,0 — list it here so the single-column
+           override actually wins; minmax(0,..) lets the image-bearing track shrink */
+        .fprofile,
+        .fprofile.flip { grid-template-columns: minmax(0, 1fr); gap: 20px; }
         .fprofile.flip .pmedia { order: 0; }
         .pmedia { position: static; max-width: 380px; }
-        .lhead { grid-template-columns: 28px 1fr auto auto; }
+        /* 3 rigid 110px stat columns overflow a phone. auto-fit packs 2-up when the
+           values fit and drops to 1-up on the narrowest phones — never overflowing. */
+        .feature .fnums { grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); }
+        .feature .fnums .stat { min-width: 0; }
+        .lhead { grid-template-columns: 28px minmax(0, 1fr) auto auto; column-gap: 12px; }
+        .lhead .lco { min-width: 0; overflow-wrap: anywhere; }
         .lhead .lone { display: none; }
         .lbody { padding-left: 32px; }
         .timeline::before { left: 14px; }
@@ -1506,6 +1517,9 @@
         .credits { columns: 1; }
         .scrollcue { display: none; }
         .cover .cstat { padding-right: 16px; }
+        /* stack caption/credit so the nowrap credit can't force horizontal scroll */
+        figure.photo figcaption { flex-direction: column; gap: 2px; }
+        figure.photo .fcredit { white-space: normal; }
       }
     </style>
   </head>
