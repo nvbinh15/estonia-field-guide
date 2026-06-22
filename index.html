@@ -142,10 +142,29 @@
         white-space: nowrap;
         letter-spacing: -0.01em;
         flex: none;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
       }
       .brand i {
         font-style: normal;
         color: var(--accent-deep);
+      }
+      /* compact Estonian-flag mark, swapped in for the wordmark once scrolled so
+         the live section label gets the full nav width (see nav.scrolled below) */
+      .brand .flag {
+        display: none;
+        height: 17px;
+        width: auto;
+        flex: none;
+        border-radius: 3px;
+      }
+      nav.scrolled .brand .wordmark {
+        display: none;
+      }
+      nav.scrolled .brand .flag {
+        display: block;
       }
       .navlinks {
         display: flex;
@@ -1537,7 +1556,18 @@
   <body>
     <div id="progress"></div>
     <nav>
-      <span class="brand">The Estonian<i> Anomaly</i></span>
+      <a class="brand" href="#cover" aria-label="The Estonian Anomaly — back to top">
+        <span class="wordmark">The Estonian<i> Anomaly</i></span>
+        <svg class="flag" viewBox="0 0 22 14" aria-hidden="true" focusable="false">
+          <clipPath id="estflag"><rect width="22" height="14" rx="2.6" /></clipPath>
+          <g clip-path="url(#estflag)">
+            <rect width="22" height="4.667" fill="#0072ce" />
+            <rect y="4.667" width="22" height="4.667" fill="#16161a" />
+            <rect y="9.333" width="22" height="4.667" fill="#fff" />
+          </g>
+          <rect x="0.5" y="0.5" width="21" height="13" rx="2.2" fill="none" stroke="rgba(20,22,26,0.22)" />
+        </svg>
+      </a>
       <div class="navlinks" id="navlinks"></div>
       <div class="navright">
         <span id="now"></span>
@@ -2105,10 +2135,13 @@
         }, { rootMargin: "-40% 0px -55% 0px" });
         [].forEach.call(document.querySelectorAll("main section"), function (s) { obs.observe(s); });
 
+        var navEl = document.querySelector("nav");
         function onScroll() {
           var h = document.documentElement;
           var max = h.scrollHeight - h.clientHeight;
           document.getElementById("progress").style.width = max > 0 ? (h.scrollTop / max) * 100 + "%" : "0";
+          // past the top: trade the wordmark for the compact flag mark
+          navEl.classList.toggle("scrolled", h.scrollTop > 80);
         }
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
